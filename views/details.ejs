@@ -1,0 +1,20 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+
+
+<section class="detailsSec">
+  
+        <figure class="detailsFig">
+                <img src=<%= product.pictureLink %> alt="">
+            <figcaption>
+                <%= product.productName %>
+                <span class="company"><%= product.company %></span>
+                <p class="price"><%= product.price %></p>
+            </figcaption>
+        </figure>
+        <p><%= product.description %></p>
+        <button><a class="fig__link" href="/details/<%= product.id %>" target="_blank"></a></button>
+
+   
+</section>
+<%- include('./partials/footer')%>

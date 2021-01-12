@@ -49,7 +49,6 @@ app.post('/add-info', (req, res) => {
         price: req.body.price, 
         description: req.body.description,
         shopLink: req.body.shopLink
-
     })
     newProductItem.save()
     .then(result => {
@@ -58,3 +57,16 @@ app.post('/add-info', (req, res) => {
     })
     .catch(err => console.log(err))
 })
+
+//si queremos ver detalles de un producto concreto:
+app.get('/details/:productId', (req, res) => {
+    console.log(req.params.productId);
+    // res.end()
+    ProductItem.findById(req.params.productId)
+  .then((result) => {
+    //   res.send(result)
+      res.render('details', {product: result})
+  })
+  .catch(err => console.log(err))
+})
+

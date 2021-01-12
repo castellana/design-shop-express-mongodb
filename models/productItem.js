@@ -12,23 +12,23 @@ const productItemSchema = new Schema({
     },
     pictureLink: {
         type: String, 
-        required: false
+        required: true
     },
     company: {
         type: String,
-        required: false
+        required: true
     },
     price: {
-        type: Number,
-        required: false
+        type: String,
+        required: true
     },
     description: {
         type: String,
-        required: false
+        required: true
     },
     shopLink: {
         type: String,
-        required: false
+        required: true
     }
 }, {timestamps: true}) //cuando hagamos una entrada, nos creará un created at ó un updated at
 
