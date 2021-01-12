@@ -1,0 +1,24 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+
+<section id="addSec">
+    <h2 class="Sectitle">Add a new product</h2>
+    <hr id="line-short">
+
+    <form action="/add-info" method="POST">
+        <input type="text" name="productName" placeholder="Product-name">
+        <input type="text" name="pictureLink" placeholder="Url Picture">
+        <input type="text" name="company" placeholder="Company">
+        <input type="number" name="price" placeholder= "Price">
+        <textarea name="description" id="description" cols="30" rows="10">Write your article here...</textarea>
+
+        <input type="text" name="shopLink" placeholder="Link-shop">
+
+        <input type="submit" value="Add Product">
+    </form>
+</section>
+
+<section id="randonSec">
+    <h2 class="Sectitle">Random product</h2>
+</section>
+<%- include('./partials/footer')%>
