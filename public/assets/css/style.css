@@ -4,7 +4,9 @@
     font-family: 'Karla', sans-serif;
     box-sizing: border-box;
 }
-
+/* body {
+    color: #323A45 / #848484
+} */
 /*Navigation*/
 .header-nav, .bottom-nav {
     display: flex;
@@ -30,7 +32,7 @@
 .nav__link, .nav__link-inline{
     text-decoration: none;
     font-size: 1rem;
-    color:#000;
+    color:#323A45;
     font-weight: bold;
 }
 .nav__link {
@@ -96,17 +98,96 @@ img:hover {
 }
 .nav__p {
     font-size: 1rem;
-    color: #000;
+    color: #323A45;
 }
 .bottom-nav h2{
-    color: #000;
+    color:#323A45;
 }
 
+
+
+/*****ADD PAGE*****/
+#addSec {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.secTitle {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+#line-short {
+    width: 15%;
+    border: none;
+    border-bottom: 4px solid #323A45;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 4vh 0;
+}
+
+input, textarea {
+    background: #8484843b;
+    font-size: 1.3rem;
+    padding: 1vh 0;
+    margin: 1vh 0;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+
+}
+input::placeholder {
+    text-align: center;
+    font-size: 1.3rem;
+    color: grey;
+}
+textarea {
+    padding: 5vh 0;
+
+
+}
+textarea::placeholder {
+    line-height: 10vh;
+    color: grey;
+}
+
+input[type=submit] {
+    background: #848484;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 2vh 0;
+}
+
+input[type=submit]:hover{
+    background: #8484848c;
+    color: #323A45;
+}
+
+#randomSec {
+    padding: 2vh 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+#randomSec .secTitle {
+    grid-column: 1 / -1;
+    text-align: center;
+}
 /*Footer*/
 footer .nav__p {
     color: #848484;
     margin: 10vh 0 5vh 7.5%;
 }
+
 
 /*Media Queries*/
 @media only screen and (max-width: 640px) {
