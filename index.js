@@ -40,7 +40,8 @@ app.use(express.urlencoded({ extended: true }))
 app.get('/add', (req, res) => {
     res.render('add')
 })
-app.post('/add-info', (req, res) => {
+///add ó un paso intermedio pwj add-info
+app.post('/add', (req, res) => {
     // console.log(req.body);
     const newProductItem = new ProductItem({
         productName: req.body.productName, 
@@ -70,3 +71,30 @@ app.get('/details/:productId', (req, res) => {
   .catch(err => console.log(err))
 })
 
+//queremos editar los datos de un producto:
+app.post('/details/:id/edit', (req, res) => {
+    console.log(req.body)
+    const updatedProduct = {
+        productName: req.body.productName, 
+        pictureLink: req.body.pictureLink, 
+        company: req.body.company,
+        price: req.body.price, 
+        description: req.body.description,
+        shopLink: req.body.shopLink
+    }
+    // ProductItem.findByIdAndUpdate(req.params.id,  updatedProduct) oder...
+    ProductItem.findByIdAndUpdate(req.params.id, req.body)
+    .then(result => res.redirect(`/details/${req.params.id}`))
+    .catch(err => console.log(err))
+})
+
+//queremos eliminar un producto:
+app.get('/details/:id/delete', (req, res) => {
+    ProductItem.findByIdAndDelete(req.params.id)
+    .then(result => res.redirect('/'))
+    .catch(err => console.log(err))
+})
+
+app.use((req, res) => {
+    res.status(404).render('404')
+})

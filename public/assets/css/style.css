@@ -154,6 +154,7 @@ textarea {
 
 
 }
+
 textarea::placeholder {
     line-height: 10vh;
     color: grey;
@@ -182,10 +183,47 @@ input[type=submit]:hover{
     grid-column: 1 / -1;
     text-align: center;
 }
+
+.hide {
+    display: none;
+}
+
+/*DETAILS PAGE*/
+#detailsSec {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.Buttons {
+    text-align: right;
+}
+
+#editButton, #deleteButton {
+    padding: 1vh 3%;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.3rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#product h3 {
+    font-size: 1.3rem;
+}
+
+#buyButton {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: center;
+}
 /*Footer*/
-footer .nav__p {
+footer h2 {
+    padding-bottom: 7vh;
+}
+footer p {
     color: #848484;
-    margin: 10vh 0 5vh 7.5%;
 }
 
 
