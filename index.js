@@ -26,7 +26,8 @@ mongoose.connect(process.env.dbUri, {useNewUrlParser: true, useUnifiedTopology: 
 app.get('/', (req, res) => {
     ProductItem.find()
     .then(result => {
-        res.render('index', {productData: result})
+        // res.render('index', {productData: result})
+        res.send(result)
     })
     .catch(err => console.log(err))
 })
