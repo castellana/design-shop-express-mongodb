@@ -2,11 +2,12 @@ require('dotenv').config()
 
 const express = require('express')
 const app = express()
+const mongoose = require('mongoose');
 const PORT = process.env.PORT || 5000
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
-const mongoose = require('mongoose');
 
+//model:
 const ProductItem = require('./models/productItem')
 
 //mongoose se une a nuestro DB y luego al port
@@ -61,7 +62,7 @@ app.post('/add', (req, res) => {
 
 //si queremos ver detalles de un producto concreto:
 app.get('/details/:productId', (req, res) => {
-    console.log(req.params.productId);
+    console.log('req.params.productId', req.params.productId);
     // res.end()
     ProductItem.findById(req.params.productId)
   .then((result) => {
@@ -72,8 +73,8 @@ app.get('/details/:productId', (req, res) => {
 })
 
 //queremos editar los datos de un producto:
-app.post('/details/:id/edit', (req, res) => {
-    console.log(req.body)
+app.post('/details/:productId/edit', (req, res) => {
+    // console.log(req.body)
     const updatedProduct = {
         productName: req.body.productName, 
         pictureLink: req.body.pictureLink, 
@@ -88,10 +89,15 @@ app.post('/details/:id/edit', (req, res) => {
     .catch(err => console.log(err))
 })
 
+
+app.get('/deleted', (req, res) => {
+    res.render('deleted')
+})
 //queremos eliminar un producto:
-app.get('/details/:id/delete', (req, res) => {
-    ProductItem.findByIdAndDelete(req.params.id)
-    .then(result => res.redirect('/'))
+//lo que esté detrás de ":", debe estar también detrás de "req.params....""
+app.get('/details/:productId/delete', (req, res) => {
+    ProductItem.findByIdAndDelete(req.params.productId)
+    .then(result => res.redirect('/deleted'))
     .catch(err => console.log(err))
 })
 

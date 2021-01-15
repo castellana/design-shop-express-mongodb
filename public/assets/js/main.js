@@ -3,3 +3,11 @@ const toggleHide = () => {
     // document.getElementById('product').classList.toggle('hide')
     document.getElementById('myForm').classList.toggle('hide')
 }
+
+
+
+
+
+
+
+    
