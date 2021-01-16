@@ -1,27 +1,29 @@
 <%- include('./partials/head') %>
 <%- include('./partials/nav') %>
 
-<section id="detailsSec">
-  
-    <div class="Buttons">
-        <button onclick="toggleHide()" id="editButton">Edit</button>
-        <a href="/details/<%=product.id%>/delete" id="deleteButton">Delete</a>
-    </div>
+<section id="detailsSec" class="main">
 
-    <figure id="product">
-        <img src="<%= product.pictureLink %>"" alt="">
-        <figcaption>
-            <h4 class="fig__link"><%= product.productName %>
-            <span class="company"><%= product.company %></span>
-        </h3>
-            <p class="price">$<%= product.price %></p>
-        </figcaption>
-    </figure>
 
-    <h4>Product Description:</h4>
-    <p><%= product.description %></p>
-    <a class="fig__link" href="<%= product.shopLink %>" target="_blank" id="buyButton">Buy Product</a>
 
+    <article class="product-wrapper">
+        <div class="Buttons">
+            <button onclick="toggleHide()" id="editButton">Edit</button>
+            <a href="/details/<%=product.id%>/delete" id="deleteButton">Delete</a>
+        </div>
+        <figure>
+            <img class="details__img" src="<%= product.pictureLink %>"" alt="">
+            <figcaption>
+                <h4 class="fig__link"><%= product.productName %>
+                <span class="company"><%= product.company %></span>
+                </h4>
+                <p class="price">$<%= product.price %></p>
+            </figcaption>
+        </figure>
+
+        <h4 class="details-h4">Product Description:</h4>
+        <p class="details-p"><%= product.description %></p>
+        <a class="fig__link" href="<%= product.shopLink %>" target="_blank" id="buyButton">Buy Product</a>
+    </article>
    <!-- formulario que se va a abrir con los datos ya escritos por el ususario, y donde él pueda cambiarlos  -->
     <form action="/details/<%=product.id%>/edit" method="POST" id="myForm" class="hide">
         <input type="text" name="productName" placeholder="Product-name" value="<%= product.productName %>">

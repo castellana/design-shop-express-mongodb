@@ -1,7 +1,7 @@
 <%- include('./partials/head') %>
 <%- include('./partials/nav') %>
 
-<section id="addSec">
+<section id="addSec" class="main">
     <h2 class="secTitle">Add a new product</h2>
     <hr id="line-short">
 
@@ -20,23 +20,25 @@
 
 <hr>
 
-<section id="randomSec">
+<section id="randomSec" class="main">
     <h2 class="secTitle">Random products</h2>
 
-    <% randomData.forEach(product => { %>
-        <figure>
-            <a href="/details/<%= product.id %>" target="_blank">
-                <img src=<%= product.pictureLink %> alt="">
-            </a>
-            <figcaption>
-                <a class="fig__link" href="/single/<%= product.id %>" target="_blank">
-                    <%= product.productName %>
-                    <span class="company"><%=product.company %></span>
+    <section class="random-products">
+        <% randomData.forEach(product => { %>
+            <figure class="random__fig">
+                <a href="/details/<%= product.id %>" target="_blank">
+                    <img class="random__img" src=<%= product.pictureLink %> alt="">
                 </a>
-                <p class="price"><%= product.price %></p>
-            </figcaption>
-        </figure>
-    <% }) %>
+                <figcaption>
+                    <a class="fig__link" href="/single/<%= product.id %>" target="_blank">
+                        <%= product.productName %>
+                        <span class="company"><%=product.company %></span>
+                    </a>
+                    <p class="price"><%= product.price %></p>
+                </figcaption>
+            </figure>
+        <% }) %>
+    </section>
 </section>
 
 <%- include('./partials/footer')%>

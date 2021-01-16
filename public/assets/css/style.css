@@ -7,7 +7,7 @@
 /* body {
     color: #323A45 / #848484
 } */
-/*Navigation*/
+/**** Navigation*****/
 .header-nav, .bottom-nav {
     display: flex;
     justify-content: space-between;
@@ -15,16 +15,20 @@
     width: 85%;
     margin: 0 auto;
 }
+
 .header-nav {
     height: 20vh;
 }
+
 .bottom-nav {
     margin-top: 10vh;
     align-items: flex-start;
 }
+
 .header-menu {
     list-style: none;
 }
+
 .header__item {
     display: inline-block;
     padding: 20px 0 20px 20px;
@@ -35,30 +39,37 @@
     color:#323A45;
     font-weight: bold;
 }
+
 .nav__link {
     display: block;
 }
+
 .nav__link:hover, .nav__link-inline:hover {
     color:rgba(0, 0, 0, 0.5);
 }
+
 #menu-toggle, .hamburger {/* hamburger icon is hidden on desktops */
     display: none;
 }
-/*Main*/
-main {
+
+/**** Home ****/
+.main {
     width: 85%;
     margin: 0 auto;
 }
-.main-section {
+#homeSec {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 3fr;
-    gap: 20px;
+    column-gap: 2%;
+    row-gap: 2vh;
 }
+
 figcaption {
     display: flex;
     justify-content: space-between; 
 }
+
 .fig__link, .price{
     display: block;
     text-decoration: none;
@@ -69,56 +80,37 @@ figcaption {
     line-height: 3vh;
 }
 
-h2 {
-    font-size: 1.1rem;
-    line-height: 4vh;
-    color:  #323A45;
-    padding-bottom: 4vh;
-}
 .company {
     color: #848484;
     display: block;
 
 }
-figure:nth-child(7n+1) {
+
+.home__fig:nth-child(7n+1) {
     grid-column: 1 / -1;
 }
-img {
+
+.home__img {
     width: 100%;
 }
+
 img:hover {
     opacity: 0.5;
 }
 
-.bottom-nav a, .bottom-nav p {
-    line-height: 4vh;
-}
-.bottom-nav div:first-child {
-    width: 27%;
-}
-.nav__p {
-    font-size: 1rem;
-    color: #323A45;
-}
-.bottom-nav h2{
-    color:#323A45;
-}
-
-
-
 /*****ADD PAGE*****/
-#addSec {
-    width: 80%;
-    margin: 0 auto;
+#addSec, #randomSec {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 2vh;
 }
 
 .secTitle {
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: 300;
+    text-align: center;
 }
 
 #line-short {
@@ -142,17 +134,17 @@ input, textarea {
     border-radius: 5px;
     border: none;
     text-align: center;
-
+    cursor: pointer;
 }
+
 input::placeholder {
     text-align: center;
     font-size: 1.3rem;
     color: grey;
 }
+
 textarea {
     padding: 5vh 0;
-
-
 }
 
 textarea::placeholder {
@@ -167,39 +159,34 @@ input[type=submit] {
     padding: 2vh 0;
 }
 
-input[type=submit]:hover{
+input[type=submit]:hover, input:hover, textarea:hover{
     background: #8484848c;
     color: #323A45;
 }
 
-#randomSec {
-    padding: 2vh 0;
+.random-products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    column-gap: 2%;
 }
 
-#randomSec .secTitle {
-    grid-column: 1 / -1;
-    text-align: center;
+.random__img {
+    height: 55vh;
+    width: 100%;
+    object-fit: cover;
 }
 
 .hide {
     display: none;
 }
 
-/*DETAILS PAGE*/
-#detailsSec {
-    width: 80%;
-    margin: 0 auto;
-}
-
+/***** Details page*****/
 .Buttons {
     text-align: right;
 }
 
 #editButton, #deleteButton {
-    padding: 1vh 3%;
+    padding-left: 3%;
     text-decoration: none;
     color: #000;
     font-size: 1.3rem;
@@ -208,15 +195,38 @@ input[type=submit]:hover{
     cursor: pointer;
 }
 
-#product h3 {
+#editButton:hover, #deleteButton:hover {
+    color:#848484;
+}
+
+.product-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+
+}
+
+.details__img {
+    width: 100%;
+}
+
+.details-h4, .details-p{
     font-size: 1.3rem;
+    padding: 1vh 0;
 }
 
 #buyButton {
-    display: inline-block;
     margin-left: auto;
     margin-right: 0;
-    text-align: center;
+    border: 1px solid #848484;
+    padding: 1vh 2%;
+    margin-top: 2vh;
+}
+
+#buyButton:hover {
+    background: #848484;
+    color: #fff;
 }
 /*Footer*/
 footer h2 {
@@ -225,7 +235,26 @@ footer h2 {
 footer p {
     color: #848484;
 }
+h2 {
+    font-size: 1.1rem;
+    line-height: 4vh;
+    color:  #323A45;
+    padding-bottom: 4vh;
+}
 
+.bottom-nav a, .bottom-nav p {
+    line-height: 4vh;
+}
+.bottom-nav div:first-child {
+    width: 27%;
+}
+.nav__p {
+    font-size: 1rem;
+    color: #323A45;
+}
+.bottom-nav h2{
+    color:#323A45;
+}
 
 /*Media Queries*/
 @media only screen and (max-width: 640px) {
@@ -261,7 +290,7 @@ footer p {
         grid-template-columns: 1fr;
         gap: 5px;
     }
-    .figure {
+    .home__fig {
         width: 50%;
         height: 10vh;
     } 

@@ -47,7 +47,7 @@ app.get('/add', (req, res) => {
         // console.log('result:', result)
         // console.log('result length:', result.length);
         const productData = result
-        const randomData = productData.sort(() => .5 - Math.random()).slice(0,5)
+        const randomData = productData.sort(() => .5 - Math.random()).slice(0,6)
         //  console.log('randomData .5: ', randomData);
     res.render('add', {productData, randomData})
     })
