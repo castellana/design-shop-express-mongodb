@@ -228,6 +228,25 @@ input[type=submit]:hover, input:hover, textarea:hover{
     background: #848484;
     color: #fff;
 }
+
+/***** 404 *****/
+#pageNofound, #deletedSec {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#pageNofound h3, #deletedSec h3 {
+    font-size: 4rem;
+}
+
+#pageNofound a, #deletedSec a{
+    font-size: 2rem;
+    color: #848484;
+}
+
 /*Footer*/
 footer h2 {
     padding-bottom: 7vh;
