@@ -180,8 +180,10 @@ input[type=submit]:hover, input:hover, textarea:hover{
 
 /*** Eyes ****/
 #eyes {
-    width:200px;
+    width:180px;
     margin:20px auto;
+    display: flex;
+    justify-content: center;
 }
 
 .eye {
@@ -198,8 +200,8 @@ input[type=submit]:hover, input:hover, textarea:hover{
     content: '';
     position: absolute;
     top: 50px;
-    left: -1300%;
-    width: 1300%;
+    left: -44.5vw;
+    width: 44.5vw;
     height: 3px;
     background: #000;
     z-index: 99;
@@ -209,8 +211,8 @@ input[type=submit]:hover, input:hover, textarea:hover{
     content: '';
     position: absolute;
     top: 50px;
-    left: 70px;
-    width: 1300%;
+    left: 64px;
+    width: 44.5vw;
     height: 3px;
     background: #000;
     z-index: 99;
@@ -234,7 +236,7 @@ input[type=submit]:hover, input:hover, textarea:hover{
         left:5px;
     }
     to{
-        left: 35px;
+        left: 30px;
     }
 }
 
