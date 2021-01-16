@@ -264,7 +264,6 @@ input[type=submit]:hover, input:hover, textarea:hover{
     flex-direction: column;
     margin: 0 auto;
     width: 80%;
-
 }
 
 .details__img {
@@ -368,13 +367,12 @@ h2 {
         grid-template-columns: 1fr;
         gap: 5px;
     }
-    .home__fig {
-        width: 50%;
-        height: 10vh;
-    }
     .random-products, #lessSec {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2%;
+    }
+    .product-wrapper {
+        width: unset;
     }
 }
 
