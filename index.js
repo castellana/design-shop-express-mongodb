@@ -10,6 +10,7 @@ app.set('view engine', 'ejs')
 //model:
 const ProductItem = require('./models/productItem')
 
+
 //mongoose se une a nuestro DB y luego al port
 //Función asincrónica: usamos .then y .catch
 //La conexión debe realizarse antes del app.get:
@@ -39,8 +40,20 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/add', (req, res) => {
-    res.render('add')
+
+    ProductItem.find()
+   
+    .then(result => {
+        // console.log('result:', result)
+        // console.log('result length:', result.length);
+        const productData = result
+        const randomData = productData.sort(() => .5 - Math.random()).slice(0,5)
+        //  console.log('randomData .5: ', randomData);
+    res.render('add', {productData, randomData})
+    })
+    .catch(err => console.log(err))
 })
+
 ///add ó un paso intermedio pwj add-info
 app.post('/add', (req, res) => {
     // console.log(req.body);

@@ -19,10 +19,24 @@
 </section>
 
 <hr>
+
 <section id="randomSec">
-    <h2 class="secTitle">Random product</h2>
+    <h2 class="secTitle">Random products</h2>
 
-
-
+    <% randomData.forEach(product => { %>
+        <figure>
+            <a href="/details/<%= product.id %>" target="_blank">
+                <img src=<%= product.pictureLink %> alt="">
+            </a>
+            <figcaption>
+                <a class="fig__link" href="/single/<%= product.id %>" target="_blank">
+                    <%= product.productName %>
+                    <span class="company"><%=product.company %></span>
+                </a>
+                <p class="price"><%= product.price %></p>
+            </figcaption>
+        </figure>
+    <% }) %>
 </section>
+
 <%- include('./partials/footer')%>

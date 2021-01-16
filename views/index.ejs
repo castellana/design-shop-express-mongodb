@@ -1,21 +1,21 @@
 <%- include('./partials/head') %>
 <%- include('./partials/nav') %>
-<h1>Index</h1>
 
 <section class="main-section">
-<% productData.forEach(product => { %>
-    <figure>
-        <a href="/details/<%= product.id %>" target="_blank">
-            <img src=<%= product.pictureLink %> alt="">
-        </a>
-        <figcaption>
-            <a class="fig__link" href="/single/<%= product.id %>" target="_blank">
-                <%= product.productName %>
-                <span class="company"><%= product.company %></span>
+    <% productData.forEach(product => { %>
+        <figure>
+            <a href="/details/<%= product.id %>" target="_blank">
+                <img src=<%= product.pictureLink %> alt="">
             </a>
-            <p class="price"><%= product.price %></p>
-        </figcaption>
-    </figure>
+            <figcaption>
+                <a class="fig__link" href="/single/<%= product.id %>" target="_blank">
+                    <%= product.productName %>
+                    <span class="company"><%= product.company %></span>
+                </a>
+                <p class="price"><%= product.price %></p>
+            </figcaption>
+        </figure>
+    <% }) %>
+</section>
 
-<% }) %>
 <%- include('./partials/footer')%>
