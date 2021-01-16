@@ -40,9 +40,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/add', (req, res) => {
-
     ProductItem.find()
-   
     .then(result => {
         // console.log('result:', result)
         // console.log('result length:', result.length);
@@ -122,6 +120,16 @@ app.get('/lessThan30', (req, res) => {
     .then(result => {
         console.log(result);
         res.render('lessThan30', {cheapData: result})
+    })
+    .catch(err => console.log(err))
+})
+
+//Weekly Recommendations
+app.get('/weekly', (req, res) => {
+    ProductItem.find()
+    .then(result => {
+        const weeklyData = result.sort(() => .5 - Math.random()).slice(0,3)
+    res.render('weekly', {weeklyData})
     })
     .catch(err => console.log(err))
 })
