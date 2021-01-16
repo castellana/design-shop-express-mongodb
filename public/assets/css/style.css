@@ -4,9 +4,7 @@
     font-family: 'Karla', sans-serif;
     box-sizing: border-box;
 }
-/* body {
-    color: #323A45 / #848484
-} */
+
 /**** Navigation*****/
 .header-nav, .bottom-nav {
     display: flex;
@@ -21,8 +19,8 @@
 }
 
 .bottom-nav {
-    margin-top: 10vh;
-    align-items: flex-start;
+    padding: 10vh 0 5vh;
+    /* align-items: flex-start; */
 }
 
 .header-menu {
@@ -178,6 +176,66 @@ input[type=submit]:hover, input:hover, textarea:hover{
 
 .hide {
     display: none;
+}
+
+/*** Eyes ****/
+#eyes {
+    width:200px;
+    margin:20px auto;
+}
+
+.eye {
+    display:inline-block;
+    border:2px solid #000;
+    width:37%;
+    height:100px;
+    border-radius:48%;
+    margin: 4px;
+    position:relative;
+}
+
+.eyeLeft::before{
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: -1300%;
+    width: 1300%;
+    height: 3px;
+    background: #000;
+    z-index: 99;
+}
+
+.eyeRight::after{
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 70px;
+    width: 1300%;
+    height: 3px;
+    background: #000;
+    z-index: 99;
+}
+ 
+.eye section {
+    width: 30px;
+    height: 40px;
+    background-color:#000;
+    border-radius:50%;
+    position: absolute;
+    top: 50px;
+    z-index:2;
+    left: 30px;
+    animation: watching 3s infinite linear;
+    animation-direction:alternate;
+}
+
+@keyframes watching {
+    from{
+        left:5px;
+    }
+    to{
+        left: 35px;
+    }
 }
 
 /***** Details page*****/

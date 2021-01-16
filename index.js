@@ -73,7 +73,7 @@ app.post('/add', (req, res) => {
     .catch(err => console.log(err))
 })
 
-//si queremos ver detalles de un producto concreto:
+//Queremos ver detalles de un producto concreto:
 app.get('/details/:productId', (req, res) => {
     console.log('req.params.productId', req.params.productId);
     // res.end()
@@ -85,7 +85,7 @@ app.get('/details/:productId', (req, res) => {
   .catch(err => console.log(err))
 })
 
-//queremos editar los datos de un producto:
+//Queremos editar los datos de un producto:
 app.post('/details/:productId/edit', (req, res) => {
     // console.log(req.body)
     const updatedProduct = {
