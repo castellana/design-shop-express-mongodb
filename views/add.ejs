@@ -9,7 +9,7 @@
         <input type="text" name="productName" placeholder="Product-name">
         <input type="text" name="pictureLink" placeholder="Url Picture">
         <input type="text" name="company" placeholder="Company">
-        <input type="number" name="price" placeholder= "Price">
+        <input type="number" name="price" placeholder= "Price in $">
         <textarea name="description" id="description" cols="30" rows="6" placeholder="Write your article here..."></textarea>
 
         <input type="text" name="shopLink" placeholder="Link-shop">
@@ -34,7 +34,7 @@
                         <%= product.productName %>
                         <span class="company"><%=product.company %></span>
                     </a>
-                    <p class="price"><%= product.price %></p>
+                    <p class="price">$<%= product.price %></p>
                 </figcaption>
             </figure>
         <% }) %>

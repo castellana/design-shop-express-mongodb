@@ -164,13 +164,13 @@ input[type=submit]:hover, input:hover, textarea:hover{
     color: #323A45;
 }
 
-.random-products {
+.random-products, #lessSec {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2%;
 }
 
-.random__img {
+.random__img, .less__img {
     height: 55vh;
     width: 100%;
     object-fit: cover;

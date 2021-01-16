@@ -1,11 +1,11 @@
 <%- include('./partials/head') %>
 <%- include('./partials/nav') %>
 
-<section id="homeSec" class="main">
-    <% productData.forEach(product => { %>
-        <figure class="home__fig">
+<section id="lessSec" class="main">
+    <% cheapData.forEach(product => { %>
+        <figure class="less__fig">
             <a href="/details/<%= product.id %>" target="_blank">
-                <img class="home__img" src=<%= product.pictureLink %> alt="">
+                <img class="less__img" src=<%= product.pictureLink %> alt="">
             </a>
             <figcaption>
                 <a class="fig__link" href="/single/<%= product.id %>" target="_blank">

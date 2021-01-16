@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 4000
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 
@@ -96,8 +96,8 @@ app.post('/details/:productId/edit', (req, res) => {
         description: req.body.description,
         shopLink: req.body.shopLink
     }
-    // ProductItem.findByIdAndUpdate(req.params.id,  updatedProduct) oder...
-    ProductItem.findByIdAndUpdate(req.params.id, req.body)
+    ProductItem.findByIdAndUpdate(req.params.id,  updatedProduct)
+    //..oder ProductItem.findByIdAndUpdate(req.params.id, req.body)
     .then(result => res.redirect(`/details/${req.params.id}`))
     .catch(err => console.log(err))
 })
@@ -106,13 +106,26 @@ app.post('/details/:productId/edit', (req, res) => {
 app.get('/deleted', (req, res) => {
     res.render('deleted')
 })
-//queremos eliminar un producto:
-//lo que esté detrás de ":", debe estar también detrás de "req.params....""
+
+//Eliminar un producto:(lo que esté detrás de ":", debe estar también detrás de "req.params....")
 app.get('/details/:productId/delete', (req, res) => {
     ProductItem.findByIdAndDelete(req.params.productId)
     .then(result => res.redirect('/deleted'))
     .catch(err => console.log(err))
 })
+
+
+//less than$30 Page
+app.get('/lessThan30', (req, res) => {
+    ProductItem.find({"price": { "$lt":"30" }})
+    // console.log("resultados:", resultados)
+    .then(result => {
+        console.log(result);
+        res.render('lessThan30', {cheapData: result})
+    })
+    .catch(err => console.log(err))
+})
+
 
 app.use((req, res) => {
     res.status(404).render('404')
