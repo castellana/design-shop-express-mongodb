@@ -386,7 +386,7 @@ h2 {
     }
     .header__item  {
         padding: 1.5vh 0;
-        background: rgba(204, 200, 200, 0.582);
+        background: rgb(233, 230, 230);
         width: 100%;
     }
     .header-nav {
