@@ -28,7 +28,7 @@ const productItemSchema = new Schema({
     },
     shopLink: {
         type: String,
-        required: true
+        required: false
     }
 }, {timestamps: true}) //cuando hagamos una entrada, nos creará un created at ó un updated at
 
