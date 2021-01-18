@@ -433,5 +433,17 @@ h2 {
         height: 400px;
         /* object-fit: unset; */
     }
+    #pageNofound, #deletedSec, #addedSec {
+        width: 80%;
+        margin: 0 auto;
+    }
+    #pageNofound h3, #deletedSec h3, #addedSec h3 {
+        font-size: 1.8rem;
+        text-align: center;
+        padding-bottom: 2vh;
+    }
+    #pageNofound a, #deletedSec a, #addedSec a{
+        font-size: 1.5rem;
+    }
 
 }
