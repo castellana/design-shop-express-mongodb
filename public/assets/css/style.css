@@ -290,7 +290,7 @@ input[type=submit]:hover, input:hover, textarea:hover{
 }
 
 /***** 404 *****/
-#pageNofound, #deletedSec {
+#pageNofound, #deletedSec, #addedSec {
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -298,11 +298,11 @@ input[type=submit]:hover, input:hover, textarea:hover{
     justify-content: center;
 }
 
-#pageNofound h3, #deletedSec h3 {
+#pageNofound h3, #deletedSec h3, #addedSec h3 {
     font-size: 4rem;
 }
 
-#pageNofound a, #deletedSec a{
+#pageNofound a, #deletedSec a, #addedSec a{
     font-size: 2rem;
     color: #848484;
 }
@@ -362,12 +362,13 @@ h2 {
         align-items: flex-end;
         flex-direction: column;
         position: absolute;
-        width: 85%;
+        width: 65%;
         right: 7%;
     }
     .header-menu {
         display: none;
-        width: 100%;
+        width: 130%;
+        margin-right: 1%;
     }
     .header__item {
         padding: 0;
@@ -393,8 +394,12 @@ h2 {
         height: 7vh;
         align-items: flex-start;
     }
-    .header-nav h1 {
+    #logo{
         padding-top: .7rem;
+        width: 200px;
+    }
+    #logo:hover {
+        color: #848484;
     }
     .bottom-nav {
         flex-direction: column;

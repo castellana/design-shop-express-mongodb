@@ -12,7 +12,7 @@ const productItemSchema = new Schema({
     },
     pictureLink: {
         type: String, 
-        required: true
+        required: false
     },
     company: {
         type: String,
